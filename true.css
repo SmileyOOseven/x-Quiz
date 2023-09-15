@@ -1,0 +1,92 @@
+@font-face {
+    font-family: oldStyle;                      /*einrichten der Schriftart*/
+    src: url('fonts/haziness/Haziness.ttf');
+}
+
+
+body {
+    background-color: #1f3151;
+    text-align: center;
+}
+
+h1 {
+    background: #8fd400;
+    border: black;
+    font-family: oldStyle;
+    font-size: 400%;
+}
+
+#questionfield {
+    color: #0095f7;
+    text-shadow: 2px 2px 5px black;;
+    font-family: oldStyle;
+    font-size: 40px;
+}
+
+.answers {
+    font-family: oldStyle; /*Schriftart*/
+
+    color: #0095f7; /*Schriftfarbe*/
+
+    font-size: 40px; /*Schriftgröße*/
+
+    text-transform: uppercase; /*alles großschreiben*/
+
+    letter-spacing: 1px; /*1px Abstand zwischen den Lettern*/
+
+    text-shadow: 2px 2px 5px black; /*Textschatten*/
+}
+
+#answers {
+
+    width: 5em;
+    height: 3em;
+    border: 0.15em solid currentColor;
+}
+
+#submit_btn {
+    box-shadow: 0px 1px 12px 3px black;
+    background: linear-gradient(to bottom, #1a2d4d 5%, #5a8ac4 100%);
+    background-color: #1a2d4d;
+    border-radius: 42px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 22px;
+    text-decoration: none;
+}
+
+#submit_btn:hover {
+    background: linear-gradient(to bottom, #5a8ac4 5%, #1a2d4d 100%);
+    background-color: #5a8ac4;
+}
+
+.progressFields {
+    background: #1f3151;
+    border: black;
+    font-size: 108%;
+}
+
+.infField {
+    box-shadow: 0px 1px 12px 3px black;
+    background: linear-gradient(to bottom, #1a2d4d 5%, #5a8ac4 100%);
+    background-color: #1a2d4d;
+    border-radius: 42px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    padding: 8px 22px;
+    text-decoration: none;
+}
+
+.progressFields {
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    color: white;
+}
+

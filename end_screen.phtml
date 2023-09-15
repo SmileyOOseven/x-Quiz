@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<?php
+$count = $_POST['question_number'];
+
+$points = $_POST['points'];
+
+$count = $count + 1;
+
+$fileContent = getData($count);
+
+$difficulty = getDifficulty($fileContent);
+
+$rank = getRank($points, $count);
+?>
+
+<title>x Quiz</title>
+
+<link rel="icon" type="image/x-icon" href="assets/img/xQuizfavicon.png">
+<link rel="stylesheet" href="endscreen.css">
+
+<body>
+<div class="urkunde">
+    <h1>x Quiz</h1>
+    <p>Total questions: <span id="TotalQuestions"><?= $count ?></span></p>
+    <p>correctly answered questions: <span id="CorrectlyAnsweredQuestions"><?= $points ?></span></p>
+    <p>Your rank: <span id="YourRank"></span><?= $rank ?></p>
+</div>
+</body>
+</html>
+
+<form action="start_screen.phtml" method="POST">
+    <button class="btn" id="submit_btn" type="submit">back to menu</button>
+</form>

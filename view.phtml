@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<!-- preconectoren -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!--alternative Schriftart welche nicht ge downloaded werden muss da sie dierekt von einer website kommt siehe view.standard.css-->
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,300;0,500;0,600;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+<?php
+if (true === $result) {
+    echo '<link rel="stylesheet" href="true.css">';
+} else {
+    echo '<link rel="stylesheet" href="false.css">';
+}
+?>
+
+
+<link rel="icon" type="image/x-icon" href="assets/img/xQuizfavicon.png">
+
+<head>
+    <title>x Quiz</title>
+</head>
+
+<h1><?= $typeOfQuestion ?></h1>
+
+<p id="questionfield"><?php echo $question ?></p>
+
+<br>
+<br>
+
+<form action="" method="POST">
+    <!--action = wohin die Daten gehen(bei mir nur in die Index; method = das es über die Post passiert) -->
+
+    <?php foreach ($answers as $key => $loopAnswers): ?>
+        <input id="answers<?= $key ?>" type="radio" name="AnswerCheckbox"
+               value="<?= $loopAnswers ?>">     <!--value eintragen so das ich die strings abgleichen kann -->
+        <label class="answers"
+               for="answers<?= $key ?>"><?= $loopAnswers ?></label>                 <!-- diese Schreibweise ist in php die Kurzschreibweise mit dierekter Ausgabe -->
+    <?php endforeach; ?>
+
+    <br>
+    <br>
+    <br>
+
+
+    <button id="submit_btn" type="submit">Einloggen</button>
+    <br>
+    <br>
+    <br>
+    <div class="infField">
+        <p>You answered <input class="progressFields" type="text" name="points" id="points_until_now"
+                               size="<?= $lengthCountField ?>" readonly value="<?= $points ?>">of
+            <input type="text" class="progressFields" name="question_number" id="answers_until_now"
+                   size="<?= $lengthPointField ?>" readonly value="<?= $count ?>"><?= $questionForm ?> correctly.
+        <p>difficulty: <span id="Difficulty"><?= $difficulty ?></span></p>
+        <p>Your rank: <span id="YourRank"><?= $rank ?></span></p>
+        <p><?= $lastQuestionRightAnswer ?></p>
+
+    </div>
+</form>
+</body>
+</html>
